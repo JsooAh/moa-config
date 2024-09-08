@@ -1,0 +1,25 @@
+server:
+  port: 18010
+
+spring:
+  application:
+    name: payment
+
+  datasource:
+    url: jdbc:mysql://payment-mysql:3306/payment?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
