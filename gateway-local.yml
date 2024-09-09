@@ -9,3 +9,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: payment-service
+        uri: lb://PAYMENT
+        predicates:
+        - Path=/payment/pay/**
+
+
