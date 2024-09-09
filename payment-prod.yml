@@ -5,20 +5,6 @@ spring:
   application:
     name: payment
 
-  datasource:
-    url: jdbc:mysql://payment-mysql:3306/payment?serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: princess
-    password: moaprincess
-
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-
 eureka:
   client:
     serviceUrl:
