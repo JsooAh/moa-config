@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: gateway
-
   cloud:
     gateway:
       routes:
@@ -12,10 +11,12 @@ spring:
           uri: lb://PAYMENT
           predicates:
             - Path=/payment/pay/**
+        - id: cardbank-service
+          uri: lb://cardbank
+          predicates:
+            - Path=/cardbank/**
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-
-
