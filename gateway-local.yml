@@ -4,13 +4,7 @@ server:
 spring:
   application:
     name: gateway
-  cloud:
-    gateway:
-      routes:
-        - id: payment-service
-          uri: lb://PAYMENT
-          predicates:
-            - Path=/payment/pay/**
+
 
 eureka:
   client:
