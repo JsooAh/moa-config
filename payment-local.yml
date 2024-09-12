@@ -25,8 +25,8 @@ spring:
     qrcode-expire: 5
   kafka:
     consumer:
-      auto-offset-reset:earliest
-    
+      auto-offset-reset: earliest
+      
 eureka:
   client:
     serviceUrl:
