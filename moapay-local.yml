@@ -7,9 +7,9 @@ spring:
 
   kafka:
     bootstrap-servers: 
-      - kafka-0:9092
-      - kafka-1:9092
-      - kafka-2:9092
+      - 172.19.0.2:9092
+      - 172.19.0.3:9092
+      - 172.19.0.4:9092
     consumer:
       group-id: my-consumer-group
       auto-offset-reset: earliest
