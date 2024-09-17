@@ -6,7 +6,7 @@ spring:
     name: member
 
   datasource:
-    url: jdbc:mysql://member-mysql:3306/member?serverTimezone=UTC
+    url: jdbc:mysql://member-mysql:3306/member?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess

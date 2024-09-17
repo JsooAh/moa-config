@@ -6,7 +6,7 @@ spring:
     name: moapay
 
   datasource:
-    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=UTC
+    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
