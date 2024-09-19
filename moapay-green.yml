@@ -1,0 +1,25 @@
+server:
+  port: 18021
+
+spring:
+  application:
+    name: moapay
+
+  datasource:
+    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: princess
+    password: moaprincess
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/

@@ -1,0 +1,25 @@
+server:
+  port: 18031
+
+spring:
+  application:
+    name: settlement
+
+  datasource:
+    url: jdbc:mysql://settlement-mysql:3306/settlement?serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: princess
+    password: moaprincess
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
