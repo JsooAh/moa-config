@@ -1,12 +1,12 @@
 server:
-  port: 18020
+  port: 18040
 
 spring:
   application:
-    name: moapay
+    name: member
 
   datasource:
-    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=UTC
+    url: jdbc:mysql://member-mysql:3306/member?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess

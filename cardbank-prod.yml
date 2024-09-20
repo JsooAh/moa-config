@@ -6,11 +6,11 @@ spring:
     name: cardbank
 
   datasource:
-    url: jdbc:mysql://cardbank-mysql:3306/cardbank?serverTimezone=UTC
+    url: jdbc:mysql://cardbank-mysql:3306/cardbank?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
-    
+
   jpa:
     show-sql: true
     hibernate:

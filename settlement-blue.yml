@@ -6,7 +6,7 @@ spring:
     name: settlement
 
   datasource:
-    url: jdbc:mysql://settlement-mysql:3306/settlement?serverTimezone=UTC
+    url: jdbc:mysql://settlement-mysql:3306/settlement?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess

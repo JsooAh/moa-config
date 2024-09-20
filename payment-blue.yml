@@ -1,12 +1,12 @@
 server:
-  port: 18040
+  port: 18010
 
 spring:
   application:
-    name: member
+    name: payment
 
   datasource:
-    url: jdbc:mysql://member-mysql:3306/member?serverTimezone=UTC
+    url: jdbc:mysql://payment-mysql:3306/payment?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
@@ -18,6 +18,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  redis:
+    host: payment-redis
+    port: 6379
 
 eureka:
   client:
