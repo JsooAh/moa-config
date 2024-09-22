@@ -15,6 +15,10 @@ spring:
           uri: lb://cardbank
           predicates:
             - Path=/cardbank/**
+        - id: member-service
+          uri: lb://member
+          predicates:
+            - Path=/payment/member/**
 
 eureka:
   client:
