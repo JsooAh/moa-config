@@ -16,6 +16,9 @@ spring:
       hibernate:
         format_sql: true
 
+  cloud:
+    config:
+      uri: http://config-server:8888
 eureka:
   client:
     serviceUrl:
