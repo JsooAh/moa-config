@@ -24,8 +24,12 @@ spring:
       uri: http://config-server:8888
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    serviceUrl:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://eureka-server:8761/eureka/
 
 management:
