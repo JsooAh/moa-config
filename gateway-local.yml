@@ -10,7 +10,7 @@ spring:
         - id: payment-service
           uri: lb://PAYMENT
           predicates:
-            - Path=/payment/pay/**
+            - Path=/moapay/pay/**
         - id: cardbank-service
           uri: lb://cardbank
           predicates:
@@ -18,11 +18,11 @@ spring:
         - id: member-service
           uri: lb://member
           predicates:
-            - Path=/payment/member/**
+            - Path=/moapay/member/**
         - id: moapay-service
           uri: lb://moapay
           predicates:
-            - Path=/payment/moapay/**
+            - Path=/moapay/core/**
 
 eureka:
   client:
