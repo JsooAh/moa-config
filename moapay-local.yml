@@ -1,5 +1,7 @@
 server:
   port: 18020
+  servlet:
+    context-path: /moapay/core
 
 spring:
   application:
