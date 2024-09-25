@@ -10,7 +10,7 @@ spring:
     gateway:
       routes:
         - id: payment-service
-          uri: lb://PAYMENT
+          uri: lb://payment
           predicates:
             - Path=/moapay/pay/**
         - id: cardbank-service
