@@ -16,15 +16,15 @@ spring:
         - id: cardbank-service
           uri: lb://cardbank
           predicates:
-            - Path=/cardbank/**
+            - Path=/api/cardbank/**
         - id: member-service
           uri: lb://member
           predicates:
-            - Path=/moapay/member/**
+            - Path=/api/moapay/member/**
         - id: moapay-service
           uri: lb://moapay
           predicates:
-            - Path=/moapay/core/**
+            - Path=/api/moapay/core/**
 
 eureka:
   instance:

@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: /api/moapay/core
+
 spring:
   application:
     name: moapay
