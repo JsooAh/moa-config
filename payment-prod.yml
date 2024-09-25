@@ -2,7 +2,7 @@ spring:
   application:
     name: payment
   servlet:
-    context-path: /moapay/pay
+    context-path: /api/moapay/pay
 
   datasource:
     url: jdbc:mysql://payment-mysql:3306/payment?serverTimezone=Asia/Seoul
