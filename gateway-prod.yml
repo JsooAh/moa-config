@@ -12,7 +12,7 @@ spring:
         - id: payment-service
           uri: lb://payment
           predicates:
-            - Path=/moapay/pay/**
+            - Path=/api/moapay/pay/**
         - id: cardbank-service
           uri: lb://cardbank
           predicates:
