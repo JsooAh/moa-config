@@ -1,7 +1,5 @@
 server:
   port: 18040
-  servlet:
-    context-path: /moapay/member
 
 spring:
   application:
