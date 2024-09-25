@@ -19,6 +19,10 @@ spring:
           uri: lb://member
           predicates:
             - Path=/payment/member/**
+        - id: moapay-service
+          uri: lb://moapay
+          predicates:
+            - Path=/payment/moapay/**
 
 eureka:
   client:
