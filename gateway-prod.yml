@@ -7,6 +7,24 @@ spring:
   cloud:
     config:
       uri: http://config-server:8888
+    gateway:
+      routes:
+        - id: payment-service
+          uri: lb://PAYMENT
+          predicates:
+            - Path=/moapay/pay/**
+        - id: cardbank-service
+          uri: lb://cardbank
+          predicates:
+            - Path=/cardbank/**
+        - id: member-service
+          uri: lb://member
+          predicates:
+            - Path=/moapay/member/**
+        - id: moapay-service
+          uri: lb://moapay
+          predicates:
+            - Path=/moapay/core/**
 
 eureka:
   instance:
