@@ -10,11 +10,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
-    
+
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
