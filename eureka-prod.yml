@@ -4,8 +4,18 @@ server:
 spring:
   application:
     name: eureka-server
+  cloud:
+    config:
+      uri: http://config-server:8888
 
 eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"

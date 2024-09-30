@@ -4,8 +4,37 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment-service
+          uri: lb://PAYMENT
+          predicates:
+            - Path=/moapay/pay/**
+        - id: cardbank-service
+          uri: lb://cardbank
+          predicates:
+            - Path=/cardbank/**
+          filters:
+            - AuthorizationHeaderFilter
+            - RewritePath=/cardbank/(?<segment>.*),/$\{segment}
+        - id: member-service
+          uri: lb://member
+          predicates:
+            - Path=/moapay/member/**
+        - id: moapay-service
+          uri: lb://moapay
+          predicates:
+            - Path=/moapay/core/**
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"

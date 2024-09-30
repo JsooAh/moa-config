@@ -1,16 +1,18 @@
 server:
   port: 18100
+  servlet:
+    context-path: /api/cardbank
 
 spring:
   application:
     name: cardbank
 
   datasource:
-    url: jdbc:mysql://cardbank-mysql:3306/cardbank?serverTimezone=UTC
+    url: jdbc:mysql://cardbank-mysql:3306/cardbank?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
-    
+
   jpa:
     show-sql: true
     hibernate:
@@ -18,8 +20,18 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  cloud:
+    config:
+      uri: http://config-server:8888
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka-server:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"

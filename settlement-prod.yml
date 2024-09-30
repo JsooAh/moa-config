@@ -1,12 +1,9 @@
-server:
-  port: 18030
-
 spring:
   application:
     name: settlement
 
   datasource:
-    url: jdbc:mysql://settlement-mysql:3306/settlement?serverTimezone=UTC
+    url: jdbc:mysql://settlement-mysql:3306/settlement?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
@@ -19,7 +16,22 @@ spring:
       hibernate:
         format_sql: true
 
+  cloud:
+    config:
+      uri: http://config-server:8888
+
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    serviceUrl:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://eureka-server:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"

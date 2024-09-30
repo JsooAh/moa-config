@@ -1,12 +1,13 @@
 server:
-  port: 18020
+  servlet:
+    context-path: /api/moapay/core
 
 spring:
   application:
     name: moapay
 
   datasource:
-    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=UTC
+    url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: princess
     password: moaprincess
@@ -18,8 +19,27 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  redis:
+    host: moapay-redis
+    port: 6379
+    qrcode-expire: 5
+
+  cloud:
+    config:
+      uri: http://config-server:8888
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    serviceUrl:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
       defaultZone: http://eureka-server:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"

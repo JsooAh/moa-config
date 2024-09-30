@@ -4,8 +4,40 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    config:
+      uri: http://config-server:8888
+    gateway:
+      routes:
+        - id: payment-service
+          uri: lb://payment
+          predicates:
+            - Path=/api/moapay/pay/**
+        - id: cardbank-service
+          uri: lb://cardbank
+          predicates:
+            - Path=/api/cardbank/**
+        - id: member-service
+          uri: lb://member
+          predicates:
+            - Path=/api/moapay/member/**
+        - id: moapay-service
+          uri: lb://moapay
+          predicates:
+            - Path=/api/moapay/core/**
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
-    serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+        exclude: "*"
