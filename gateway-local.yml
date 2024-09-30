@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: gateway
+  jwt:
+    secret: princessSecretKey
+    token:
+      access-expiration-time: 86400000     # 24시간
+      refresh-expiration-time: 604800000   # 7일
   cloud:
     gateway:
       routes:
