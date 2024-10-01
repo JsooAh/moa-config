@@ -26,16 +26,15 @@ spring:
           predicates:
             - Path=/moapay/member/login, /moapay/member/join, /moapay/member/sendSMS, /moapay/member/verification, /moapay/member/isMember
           filters:
-            - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
-
+            - RemoveRequestHeader=Cookie
         # 필터 검증 필요한 member-service (모든 다른 경로)
         - id: member-service-with-filter
           uri: lb://member
           predicates:
             - Path=/moapay/member/**
           filters:
+            - RemoveRequestHeader=Cookie
             - AuthorizationHeaderFilter
-            - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
         - id: moapay-service
           uri: lb://moapay
           predicates:
