@@ -20,9 +20,6 @@ spring:
           uri: lb://cardbank
           predicates:
             - Path=/cardbank/**
-          filters:
-            - AuthorizationHeaderFilter
-            - RewritePath=/cardbank/(?<segment>.*),/$\{segment}
         # 필터 검증하지 않는 member-service
         - id: member-service
           uri: lb://member
