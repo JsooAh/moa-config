@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: gateway
+  redis:
+    host: localhost
+    port: 6379
   jwt:
     secret: princessSecretKey
     token:
@@ -27,6 +30,7 @@ spring:
             - Path=/moapay/member/login, /moapay/member/join, /moapay/member/sendSMS, /moapay/member/verification, /moapay/member/isMember
           filters:
             - RemoveRequestHeader=Cookie
+            - JwtFilter
             - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
         # 필터 검증 필요한 member-service (모든 다른 경로)
         - id: member-service-with-filter
@@ -35,6 +39,7 @@ spring:
             - Path=/moapay/member/**
           filters:
             - RemoveRequestHeader=Cookie
+            - JwtFilter
             - AuthorizationHeaderFilter
             - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
         - id: moapay-service
