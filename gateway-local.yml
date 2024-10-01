@@ -23,25 +23,10 @@ spring:
           uri: lb://cardbank
           predicates:
             - Path=/cardbank/**
-        # 필터 검증하지 않는 member-service (로그인 및 다른 특정 경로)
-        - id: member-service-no-filter
-          uri: lb://member
-          predicates:
-            - Path=/moapay/member/login, /moapay/member/join, /moapay/member/sendSMS, /moapay/member/verification, /moapay/member/isMember
-          filters:
-            - RemoveRequestHeader=Cookie
-            - JwtFilter
-            - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
-        # 필터 검증 필요한 member-service (모든 다른 경로)
-        - id: member-service-with-filter
+        - id: member-service
           uri: lb://member
           predicates:
             - Path=/moapay/member/**
-          filters:
-            - RemoveRequestHeader=Cookie
-            - JwtFilter
-            - AuthorizationHeaderFilter
-            - RewritePath=/moapay/member/(?<segment>.*),/$\{segment}
         - id: moapay-service
           uri: lb://moapay
           predicates:
