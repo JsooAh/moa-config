@@ -23,10 +23,18 @@ spring:
           uri: lb://cardbank
           predicates:
             - Path=/cardbank/**
+        # 필터 검증하지 않는 member-service
+        - id: member-service
+          uri: lb://member
+          predicates:
+            - Path=/moapay/member/login, /moapay/member/join, /moapay/member/sendSMS, /moapay/member/verification, /moapay/member/isMember
+        # 필터 검증 필요한 member-service
         - id: member-service
           uri: lb://member
           predicates:
             - Path=/moapay/member/**
+          filters:
+            - AuthorizationHeaderFilter
         - id: moapay-service
           uri: lb://moapay
           predicates:
