@@ -28,7 +28,6 @@ spring:
           predicates:
             - Path=/moapay/member/**
           filters:
-            - RemoverequestHeader=Cookie
             - AuthorizationHeaderFilter
         - id: moapay-service
           uri: lb://moapay
