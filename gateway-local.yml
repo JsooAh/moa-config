@@ -35,8 +35,6 @@ spring:
             - Path=/moapay/member/**
           filters:
             - AuthorizationHeaderFilter
-          filters:
-            - AuthorizationHeaderFilter
         - id: moapay-service
           uri: lb://moapay
           predicates:
