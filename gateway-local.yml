@@ -27,8 +27,6 @@ spring:
           uri: lb://member
           predicates:
             - Path=/moapay/member/**
-          filters:
-            - name: JwtAuthenticationFilter # JWT 인증 필터 이름
         - id: moapay-service
           uri: lb://moapay
           predicates:
