@@ -46,3 +46,6 @@ management:
       exposure:
         include: health
         exclude: "*"
+
+external-url:
+  cardbank: https://cardbank:18100/api/cardbank
