@@ -43,3 +43,6 @@ management:
       exposure:
         include: health
         exclude: "*"
+
+external-url:
+  cardbank: http://localhost:18100/cardbank
