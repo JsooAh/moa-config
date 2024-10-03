@@ -8,7 +8,13 @@ spring:
   redis:
     host: member-redis
     port: 6379
-
+  jwt:
+    secret: princessSecretKeyverylonghappyprojectmoapayiwanttogohomeohmygodhowlong
+    token:
+      access-expiration-time: 86400000     # 24시간
+      refresh-expiration-time: 604800000   # 7일
+  mvc:
+    static-path-pattern: /static/**
   datasource:
     url: jdbc:mysql://member-mysql:3306/member?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
