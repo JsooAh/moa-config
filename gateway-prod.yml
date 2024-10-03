@@ -4,9 +4,6 @@ server:
 spring:
   application:
     name: gateway
-  redis:
-    host: gateway-redis
-    port: 6379
   jwt:
     secret: princessSecretKeyverylonghappyprojectmoapayiwanttogohomeohmygodhowlong
     token:
