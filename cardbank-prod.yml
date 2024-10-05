@@ -1,7 +1,7 @@
 server:
   port: 18100
   servlet:
-    context-path: /api/cardbank
+    context-path: /cardapi/cardbank
 
 spring:
   application:
