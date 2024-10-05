@@ -6,6 +6,28 @@ spring:
   application:
     name: moapay
 
+  kafka:
+    bootstrap-servers:
+      - kafka-00:9092
+      - kafka-01:9093
+      - kafka-02:9094
+    consumer:
+      group-id: my-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        max-poll-records: 500
+        enable-auto-commit: true
+        auto-commit-interval-ms: 1000
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      enable-idempotence: true
+      batch-size: 1
+
   datasource:
     url: jdbc:mysql://moapay-mysql:3306/moapay?serverTimezone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
