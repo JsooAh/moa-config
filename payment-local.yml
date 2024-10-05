@@ -44,8 +44,7 @@ management:
         include: health
         exclude: "*"
 
-fcm:
-  MoaPayFCM: MoaPayFCM.json
+
 
 external-url:
   cardbank: http://localhost:18100/cardbank
