@@ -59,7 +59,10 @@ management:
       exposure:
         include: health
         exclude: "*"
-        
+
+fcm:
+  MoaPayFCM: MoaPayFCM.json
+
 external-url:
   cardbank: http://localhost:18100/cardbank
   store: http://localhost:18200/store
