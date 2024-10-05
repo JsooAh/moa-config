@@ -1,8 +1,10 @@
+server:
+  servlet:
+    context-path: /api/moapay/pay
+
 spring:
   application:
     name: payment
-  servlet:
-    context-path: /moapay/pay
 
   datasource:
     url: jdbc:mysql://payment-mysql:3306/payment?serverTimezone=Asia/Seoul
@@ -44,3 +46,10 @@ management:
       exposure:
         include: health
         exclude: "*"
+
+external-url:
+  cardbank: https://cardbank:18100/api/cardbank
+  store: http://store:18200/api/store
+
+external-url:
+  moapay: https://j11c201.p.ssafy.io/api/moapay

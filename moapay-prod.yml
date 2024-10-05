@@ -1,3 +1,7 @@
+server:
+  servlet:
+    context-path: /api/moapay/core
+
 spring:
   application:
     name: moapay
@@ -19,6 +23,7 @@ spring:
     host: moapay-redis
     port: 6379
     qrcode-expire: 5
+    barcode-expire: 5
 
   cloud:
     config:

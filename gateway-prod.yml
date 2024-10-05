@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: gateway
+  jwt:
+    secret: princessSecretKeyverylonghappyprojectmoapayiwanttogohomeohmygodhowlong
+    token:
+      access-expiration-time: 86400000 # 24시간
+      refresh-expiration-time: 604800000 # 7일
   cloud:
     config:
       uri: http://config-server:8888
@@ -12,19 +17,15 @@ spring:
         - id: payment-service
           uri: lb://payment
           predicates:
-            - Path=api/moapay/pay/**
-        - id: cardbank-service
-          uri: lb://cardbank
-          predicates:
-            - Path=api/cardbank/**
+            - Path=/api/moapay/pay/**
         - id: member-service
           uri: lb://member
           predicates:
-            - Path=api/moapay/member/**
+            - Path=/api/moapay/member/**
         - id: moapay-service
           uri: lb://moapay
           predicates:
-            - Path=api/moapay/core/**
+            - Path=/api/moapay/core/**
 
 eureka:
   instance:
