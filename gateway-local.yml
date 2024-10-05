@@ -19,10 +19,6 @@ spring:
           uri: lb://PAYMENT
           predicates:
             - Path=/moapay/pay/**
-        - id: cardbank-service
-          uri: lb://cardbank
-          predicates:
-            - Path=/cardbank/**
         - id: member-service
           uri: lb://member
           predicates:
