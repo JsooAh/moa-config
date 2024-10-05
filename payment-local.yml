@@ -44,6 +44,8 @@ management:
         include: health
         exclude: "*"
 
+
+
 external-url:
   cardbank: http://localhost:18100/cardbank
   store: http://localhost:18200/store
