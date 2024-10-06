@@ -26,9 +26,9 @@ spring:
     qrcode-expire: 5
   kafka:
     bootstrap-servers:
-      - kafka-00:9092
-      - kafka-01:9093
-      - kafka-02:9094
+      - kafka-00:19092
+      - kafka-01:19093
+      - kafka-02:19094
     consumer:
       group-id: payments_consumer_group
       auto-offset-reset: earliest
