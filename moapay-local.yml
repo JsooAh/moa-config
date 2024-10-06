@@ -45,6 +45,7 @@ spring:
   redis:
     host: localhost
     port: 6379
+    password: moaprincess
     qrcode-expire: 5
     barcode-expire: 5
 
