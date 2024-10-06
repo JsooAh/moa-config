@@ -72,5 +72,5 @@ fcm:
   MoaPayFCM: MoaPayFCM.json
 
 external-url:
-  cardbank: http://cardbank:18100/cardbank
-  store: http://store:18200/store
+  cardbank: https://cardbank:18100/cardbank
+  store: https://store:18200/store
