@@ -24,6 +24,7 @@ spring:
   redis:
     host: localhost
     port: 6379
+    password: moaprincesss
     qrcode-expire: 5
   kafka:
     consumer:
