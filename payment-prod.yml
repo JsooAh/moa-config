@@ -25,8 +25,26 @@ spring:
     password: moaprincess
     qrcode-expire: 5
   kafka:
+    bootstrap-servers:
+      - kafka-00:19092
+      - kafka-01:19093
+      - kafka-02:19094
     consumer:
+      group-id: payments_consumer_group
       auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        max-poll-records: 500
+        enable-auto-commit: true
+        auto-commit-interval-ms: 1000
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      enable-idempotence: true
+      batch-size: 1
 
   cloud:
     config:
@@ -53,4 +71,4 @@ external-url:
   core: https://j11c201.p.ssafy.io/api/moapay/core
   member: https://j11c201.p.ssafy.io/api/moapay/member
   cardbank: https://cardbank:18100/api/cardbank
-  store: http://store:18200/api/store
+  store: https://store:18200/api/store
