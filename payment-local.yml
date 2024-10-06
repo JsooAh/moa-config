@@ -47,5 +47,5 @@ management:
 
 
 external-url:
-  cardbank: http://localhost:18100/cardbank
-  store: http://localhost:18200/store
+  member: http://localhost:18040/moapay/member
+  core: http://localhost:18020/moapay/core

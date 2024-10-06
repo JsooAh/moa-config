@@ -49,8 +49,6 @@ management:
         exclude: "*"
 
 external-url:
-  cardbank: https://cardbank:18100/api/cardbank
-  store: http://store:18200/api/store
-
-external-url:
   moapay: https://j11c201.p.ssafy.io/api/moapay
+  core: https://j11c201.p.ssafy.io/api/moapay/core
+  member: https://j11c201.p.ssafy.io/api/moapay/member
