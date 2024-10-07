@@ -1,7 +1,7 @@
 server:
   port: 18200
-  servlet:
-    context-path: /storeapi/store
+  #servlet:
+    #context-path: /storeapi/store
 
 spring:
   application:
