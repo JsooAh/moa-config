@@ -74,3 +74,4 @@ fcm:
 external-url:
   cardbank: https://cardbank:18100/cardbank
   store: https://store:18200/store
+  payment: https://j11c201.p.ssafy.io/api/moapay/pay
