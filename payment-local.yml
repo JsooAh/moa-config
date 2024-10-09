@@ -2,7 +2,6 @@ server:
   port: 18010
   servlet:
     context-path: /moapay/pay
-    
 
 spring:
   application:
@@ -17,7 +16,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
@@ -50,4 +49,3 @@ external-url:
   core: http://localhost:18020/moapay/core
   cardbank: http://localhost:18100/cardbank
   store: http://localhost:18200/store
-  
