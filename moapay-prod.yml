@@ -72,6 +72,6 @@ fcm:
   MoaPayFCM: MoaPayFCM.json
 
 external-url:
-  cardbank: https://cardbank:18100/cardbank
-  store: https://store:18200/store
+  cardbank: https://j11c201.p.ssafy.io/cardapi/cardbank
+  store: https://j11c201.p.ssafy.io/storeapi/store
   payment: https://j11c201.p.ssafy.io/api/moapay/pay
