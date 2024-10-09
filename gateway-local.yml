@@ -14,6 +14,8 @@ spring:
       refresh-expiration-time: 604800000   # 7일
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_FIRST
       routes:
         - id: payment-service
           uri: lb://PAYMENT
