@@ -2,7 +2,6 @@ server:
   port: 18010
   servlet:
     context-path: /moapay/pay
-    
 
 spring:
   application:
@@ -50,4 +49,3 @@ external-url:
   core: http://localhost:18020/moapay/core
   cardbank: http://localhost:18100/cardbank
   store: http://localhost:18200/store
-  
