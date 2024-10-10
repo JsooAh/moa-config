@@ -27,7 +27,7 @@ spring:
           predicates:
             - Path=/api/moapay/core/**
         - id: dutchpay-service
-          uri: lb:ws://DUTCHPAY-SERVICE
+          uri: lb:wss://DUTCHPAY-SERVICE
           predicates:
             - Path=/moapay/core/ws/dutchpay
           filters:
