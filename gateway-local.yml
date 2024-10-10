@@ -29,6 +29,13 @@ spring:
           uri: lb://moapay
           predicates:
             - Path=/moapay/core/**
+        - id: dutchpay-service
+          uri: lb:ws://DUTCHPAY-SERVICE
+          predicates:
+            - Path=/moapay/core/ws/dutchpay
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/moapay/core/ws/dutchpay, /ws/dutchpay
 
 eureka:
   client:
