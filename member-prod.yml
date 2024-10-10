@@ -12,7 +12,7 @@ spring:
   jwt:
     secret: princessSecretKeyverylonghappyprojectmoapayiwanttogohomeohmygodhowlong
     token:
-      access-expiration-time: 86400000 #  24시간
+      access-expiration-time: 864000001 #  24 * 10시간
       refresh-expiration-time: 604800000 # 7일
   mvc:
     static-path-pattern: /static/**
