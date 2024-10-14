@@ -48,3 +48,9 @@ management:
       exposure:
         include: health
         exclude: "*"
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
